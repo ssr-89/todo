@@ -1,0 +1,26 @@
+// @function vw($value, $base: 1440) {
+//   @return $value / $base * 100vw;
+// }
+
+// @function vmin($value, $base: 320) {
+//   @return $value / $base * 100vmin;
+// }
+
+@mixin font-face($font-family, $url, $weight) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src:
+      url("../fonts/#{$url}.woff2") format("woff2"),
+      url("../fonts/#{$url}.woff") format("woff");
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: normal;
+  }
+}
+
+@include font-face("Exo 2", "Exo2-Regular", 400);
+@include font-face("Exo 2", "Exo2-Medium", 500);
+@include font-face("Exo 2", "Exo2-SemiBold", 600);
+@include font-face("Exo 2", "Exo2-Bold", 700);
+@include font-face("Exo 2", "Exo2-ExtraBold", 800);
+@include font-face("Exo 2", "Exo2-Black", 900);

@@ -1,0 +1,119 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  line-height: 1;
+  outline: none;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-color);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; // "Exo 2",
+  color: var(--second-color);
+  overflow-x: hidden;
+  user-select: none;
+}
+body.lock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+}
+/*==================================================*/
+/* прижатие футера к низу */
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100%;
+}
+.main {
+  flex: 1 1 auto;
+}
+/*==================================================*/
+hr {
+  margin: 0;
+  padding: 0;
+}
+.btn {
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  background: transparent;
+  border: none;
+  font-size: 100%;
+  color: inherit;
+  cursor: pointer;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.img {
+  /* display: block; */
+  vertical-align: top;
+  max-width: 100%;
+  pointer-events: none; /* снятие всех событий с данного элемента */
+}
+.input {
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  background: transparent;
+  border: none;
+  resize: none;
+}
+.link {
+  text-decoration: none;
+  font-size: 100%;
+  color: inherit;
+}
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.table {
+  border-collapse: collapse;
+}
+.title,
+.text {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.pre {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: 1;
+}
+[class*="__container"] {
+  margin: 0 auto;
+  padding: clamp(0.625rem, 0.054rem + 2.86vw, 1.875rem);
+  max-width: 1020px;
+}
+.none {
+  display: none !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--second-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}

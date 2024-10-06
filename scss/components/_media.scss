@@ -1,0 +1,22 @@
+@media (max-width: 575.98px) {
+  /* TODO */
+  .todo {
+    &box {
+      &--addheader {
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 479.98px) {
+  /* TODO */
+  .todo {
+    &__wrap {
+      width: 100%;
+    }
+    &__delete {
+      flex: 1 0 100%;
+    }
+  }
+}

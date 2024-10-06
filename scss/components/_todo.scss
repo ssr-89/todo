@@ -1,0 +1,172 @@
+/* TODO */
+.todo {
+  background-color: #eee;
+  &__title {
+    font-weight: 500;
+    font-size: clamp(1.5rem, 0.75rem + 3.75vw, 3rem);
+  }
+  &__text {
+    font-weight: 500;
+    font-size: clamp(0.875rem, 0.75rem + 0.63vw, 1.125rem);
+  }
+  &box {
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    &:not(:last-child) {
+      margin-bottom: clamp(0.938rem, 0.469rem + 2.34vw, 1.875rem);
+    }
+
+    &__header {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: clamp(0.625rem, 0.313rem + 1.56vw, 1.25rem) clamp(0.625rem, 0.313rem + 1.56vw, 1.25rem);
+      border-bottom: 1px solid var(--main-color);
+    }
+    &__img {
+      width: clamp(1.875rem, 1.25rem + 3.13vw, 3.125rem);
+    }
+    &__title {
+      font-weight: 500;
+      font-size: clamp(1.125rem, 0.938rem + 0.94vw, 1.5rem);
+    }
+
+    &--addheader {
+      align-items: flex-start;
+      border-bottom: 1px solid var(--main-color);
+    }
+  }
+
+  &list {
+    &__task {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px clamp(0.625rem, 0.313rem + 1.56vw, 1.25rem);
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--main-color);
+      }
+    }
+
+    .task-title {
+      font-weight: 500;
+      font-size: clamp(0.875rem, 0.75rem + 0.63vw, 1.125rem);
+
+      &--done {
+        text-decoration: line-through;
+        color: lightgray;
+        &:hover {
+          .todolist__btn {
+            background-color: var(--main-color);
+          }
+        }
+      }
+    }
+    &__wrap-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+    &__btn {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      width: 30px;
+      background-color: var(--main-color);
+      border-radius: 5px;
+
+      .tooltip {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        padding: 5px;
+        background-color: var(--second-color);
+        border-radius: 3px;
+        font-size: 10px;
+        color: var(--bg-color);
+
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &:hover {
+        background-color: darkgray;
+        .tooltip {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  /* ADD TASK */
+  .addtask {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(0.625rem, 0.313rem + 1.56vw, 1.25rem);
+
+    &__input {
+      margin-bottom: 5px;
+      padding: clamp(0.313rem, 0.156rem + 0.78vw, 0.625rem) 10px;
+      width: 100%;
+      border: 1px solid var(--main-color);
+      border-radius: 5px;
+
+      &::placeholder {
+        font-size: clamp(0.875rem, 0.75rem + 0.63vw, 1.125rem);
+      }
+
+      &:focus {
+        border-color: rgba(65, 105, 225, 0.4);
+        outline: 2px solid rgba(65, 105, 225, 0.4);
+        &::placeholder {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+    &__label {
+      margin-bottom: 20px;
+      font-size: clamp(0.438rem, 0.313rem + 0.63vw, 0.688rem);
+    }
+    &__btn {
+      padding: clamp(0.313rem, 0.156rem + 0.78vw, 0.625rem) 10px;
+      background-color: var(--blue);
+      border: 1px solid var(--blue);
+      border-radius: 5px;
+      font-size: clamp(0.875rem, 0.75rem + 0.63vw, 1.125rem);
+      color: var(--bg-color);
+      &:hover {
+        background: transparent;
+        color: var(--blue);
+      }
+    }
+  }
+
+  /* DELETE TASKS */
+  &__wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__delete {
+    padding: clamp(0.313rem, 0.156rem + 0.78vw, 0.625rem) 10px;
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    font-size: clamp(0.875rem, 0.75rem + 0.63vw, 1.125rem);
+    color: var(--bg-color);
+    &:hover {
+      background: transparent;
+      color: var(--blue);
+    }
+  }
+}
